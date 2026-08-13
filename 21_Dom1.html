@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+</head>
+<body>
+    <div class="bg-block">
+        <h1 id="title" class="heading">Dom learning<span style="display: none;"> test text</span></h1>
+        <p id="text">
+            hi hello today is 14 feb
+        </p>
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing.</h4>
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+<script>
+    //all the console.log() outputs will be in inspect then console in website
+    console.log(document.getElementById("title"))
+    console.log(document.getElementById("title").id)//can only give me the value of id
+    console.log(document.getElementById("title").className)
+    console.log(document.getElementById("title").getAttribute('id'))//in this case is giving me the value of attribute but could give the value of any attribute of a object.
+    console.log(document.getElementById("title").getAttribute('class'))
+    console.log(document.getElementById("title").setAttribute('class','main-heading'))//this change any attribute value (in this case) or create a new attribute, and it always over-riders the previous attribute. Returns undefined
+    document.getElementById("title").setAttribute('size','50')// creating a new attribute
+    console.log(document.getElementById("title").getAttribute('class'))
+    console.log(document.getElementById("title").getAttribute('size'))
+
+    const title = document.getElementById('title')
+    console.log(title)
+
+    title.style.backgroundColor='green'// sets a css style
+    title.style.borderRadius='15px'
+    title.style.padding='5px'
+
+    //diff between the the below 3 code can assd by the the way span and the text in it is shown
+    console.log(title.textContent)//Shows all the text irrespective of if they are shown or not
+    console.log(title.innerText)// only shows the text which is visible
+    console.log(title.innerHTML)// shows everything including the html inside the title
+
+    //NodeList
+    // in query selector you can give any attribute, tag etc and it will return the first element it woill find whith that selector
+    console.log(document.querySelector('h4'))//it returns the first element if mutiple with the same selectors are present
+    console.log(document.querySelector('#title'))// it is usefll as it directly uses css selectors
+    console.log(document.querySelector('.main-heading'))
+    console.log(document.querySelectorAll('h4'))//this returns a node list which is similar toa array but not an array, for eg map is not available
+    const myh4=document.querySelectorAll('h4')
+    myh4[0].style='color:green'// this replace the entire css style and replaces it with green part
+    myh4[0].style.color = 'green'// this only adds/changes the color
+    myh4.forEach((ele)=>{ele.style.backgroundColor='red'})
+
+    //HTML Collection
+    console.log(document.getElementsByClassName('list-item'))// always returns a HTMLCollection
+    const myul = document.getElementsByClassName('list-item')
+    console.log(myul)
+    const arrmyul = Array.from(myul)//To itearate on a HTMLCollection you need to change it into an array
+    console.log(arrmyul)//now an array, now methods like for-each, mao could be applied
+    arrmyul.forEach((li)=>{li.style.color="orange"})
+
+</script>
+</html>
