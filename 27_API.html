@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+
+</body>
+<script>
+    const xml = new XMLHttpRequest()
+    const requestURL = "https://api.github.com/users/hexbyte-works"
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function()
+    {
+        console.log(xhr.readyState);
+        if (xhr.readystate === 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data.followers);
+        }
+    }
+    xhr.send()
+</script>
+</html>
