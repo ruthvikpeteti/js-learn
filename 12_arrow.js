@@ -9,7 +9,7 @@ const user = {
 user.welcomeMessage()
 function one(){
     let username = "Ruthvik"
-    console.log(this)
+    // console.log(this)
     console.log(this.username)
 }
 one()
