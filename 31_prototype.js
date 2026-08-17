@@ -39,7 +39,7 @@ const TASupport = {
     __proto__: teachingSupport
 }
 
-teacher.__proto__ = User
+teacher.__proto__ = User// this type of inhertiance can also be used to pass protoype access to objects in a similar hirarchy in the tree say both array and string are derived from object indipendently so they cant directly each others functions, but with tihs they could
 console.log(teacher.name)
 console.log(teacher.email)
 console.log(teacher.makevideo)
@@ -53,14 +53,14 @@ console.log(teacher.makevideo)
 //in this arrangement the user is above teacher prototype
 
 //Modren Access
-Object.setPrototypeOf(teachingSupport,teacher)
+Object.setPrototypeOf(teachingSupport,teacher)//in this teaching support derives from teacher which already derives from teacher so it could access from both of them.
 
 let anotherUsername= "chaiAurCode   "
-
+// we are declaring a prototype function for the string in perticular.
 String.prototype.trueLength = function(){
-    console.log(`${this}`)// this the referece of the string we are using it
+    console.log(`${this}`)// this refers to the perticular string calling it.
     console.log(`${this.name}`)//undefined
-    console.log(`true name is ${this.trim().length}`)
+    console.log(`true name is ${this.trim().length}`)// .length method returns the number of characters.
 }
 
 anotherUsername.trueLength()
