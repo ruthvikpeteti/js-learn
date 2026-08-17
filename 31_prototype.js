@@ -8,15 +8,16 @@ let heroPower = {
         console.log(`Spider power is ${this.spiderman}`)
     }
 }
-
+// we are creating a new function in prototype of ibject it the highst most prototype in the tree and all other elements inherit properties from the object class, hence this prototype could be used used by array object string etc.
 Object.prototype.ruthvik = function(){
     console.log(`ruthvik is present in all objects`)
 }
 
-heroPower.ruthvik()
+heroPower.ruthvik() // demonstration of the prototype declared for object class being used for array and object
 myHeros.ruthvik()
 
 //inheritance
+// using the prototype feature to to inherit properties from one object to another
 
 const User = {
     name: "chai",
@@ -39,6 +40,17 @@ const TASupport = {
 }
 
 teacher.__proto__ = User
+console.log(teacher.name)
+console.log(teacher.email)
+console.log(teacher.makevideo)
+// what the above line does is
+// teacher
+// ├── makevideo: false
+// ├── email: "chai.js@gmail.com"
+// │
+// └── [[Prototype]] → User
+//                     └── name: "chai"
+//in this arrangement the user is above teacher prototype
 
 //Modren Access
 Object.setPrototypeOf(teachingSupport,teacher)
