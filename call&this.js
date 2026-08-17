@@ -13,5 +13,8 @@ function createUser(username,email,password){
     
 }
 const user = new createUser("ruthvik", "@gmail.com", "hello@123");
+// Since createUser uses `this` to initialize a new user object, we call it with `new`.
+// `new` gives createUser a fresh object as its `this`, so its properties don't get added to the global object.
+// Directly calling createUser(...) would be a normal function call and could make `this` refer to the global object.
 
 // console.log(user)
