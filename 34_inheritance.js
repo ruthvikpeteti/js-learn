@@ -10,7 +10,7 @@ class User {// declaring a class
 
 class Teacher extends User{// inheritance of class users to class techers
     constructor(username, email,password){
-        super(username)
+        super(username)// this aoutomatically asigns the variable to the class it is inherting from
         this.email=email
         this.password=password
     }
