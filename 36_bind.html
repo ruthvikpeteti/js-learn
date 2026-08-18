@@ -12,6 +12,12 @@
             this.library = "react"
             this.server = "https://localhost:8000"
             // requirement
+            // We pass handleClick as a callback to the button.
+            // Without bind(), when the browser calls handleClick after the click,
+            // `this` would refer to the button, not to our React instance.
+            // Therefore this.server would be undefined.
+            // bind(this) creates a new function where `this` is permanently bound
+            // to the current React instance, so this.server works correctly.
             document.querySelector("button").addEventListener('click', this.handleClick.bind(this))
         }
         handleClick(){
