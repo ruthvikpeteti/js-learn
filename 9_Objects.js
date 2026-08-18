@@ -63,3 +63,13 @@ console.log(Object.values(regularUser))
 console.log(Object.entries(regularUser))//makes an array of elements, with each element being an array having the key value pair
 
 console.log(regularUser.hasOwnProperty("isLoggedIn"))// checks if the element with that key is present.
+
+const course = {
+    coursename: "Js full course",
+    price: "999",
+    courseInstructor: "Ruthvik"
+}
+
+const {courseInstructor} = course// this creates a new varable with name courseInsructor and value of this variable is the value of this key in the object.
+console.log(courseInstructor)
+const {courseInstructor:instructor} = course// this does the same thing as before, but with the variable name is the name given after : 
