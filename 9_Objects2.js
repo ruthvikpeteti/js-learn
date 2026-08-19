@@ -8,7 +8,21 @@ console.log(descripter)// writable, enumerable, configurable all three of them a
 const chai = {
     name: 'chai',
     price: 250,
-    isAvailable: true
+    isAvailable: true,
+    orderChai: function(){
+        console.log("chai was't made")
+    }
 }
 
 console.log(Object.getOwnPropertyDescriptor(chai,"price"))
+
+Object.defineProperty(chai, 'name',{
+    wrtable: false,
+    enumerable: false,
+    
+})
+console.log(Object.getOwnPropertyDescriptor(chai,"name"))
+
+for(let [key,value] of Object.entries(chai)){// in this the name wont be iterated over because it is non enumerable
+    console.log(`${key}:${value}`)
+}
