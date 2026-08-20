@@ -10,7 +10,7 @@
 <script>
     function init(){
         let name = " Morzilla";
-        function displayName(){
+        function displayName(){// any inner function can access the execution constext of the function it is residing in.
             console.log(name);
         }
         displayName();
@@ -24,6 +24,6 @@
         inner()
     }
     outer()
-    // console.log("TOO OUTER",username)
+    // console.log("TOO OUTER",username)// but outer function can not access the execution context of the inner function.
 </script>
 </html>
