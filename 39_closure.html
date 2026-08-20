@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    function makeFun(){
+        const name = "ruthvik"
+        function diaplayName(){
+            console.log(name);
+        }
+        return displayName;
+    }
+    const myFunc = makeFunc();
+    myFunc();
+</script>
+<script>
+    // document.getElementById("orange").onclick= function(){
+    //     document.getElementById("orange").style.backgroundColor= `orange`
+    // }
+    // document.getElementById("green").onclick= function(){
+    //     document.getElementById("green").style.backgroundColor= 'green'
+    // }
+    function clickHandler(color){
+        // document.body.style.background=`${color}`
+        return function(){
+            document.body.style.background=`${color}`
+
+        }
+    }
+    document.getElementById("orange").onclick=clickHandler("orange")
+    document.getElementById("green").onclick=clickHandler("green")
+
+</script>
+    
+</html>
