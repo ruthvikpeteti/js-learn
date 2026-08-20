@@ -10,14 +10,22 @@
     <button id="green">green</button>
 </body>
 <script>
+    // CLOSURE:
+    // A closure is a function together with the lexical environment (variables)
+    // that it remembers from where the function was created.
+    // Here, displayName() is created inside makeFun(), so it can access `name`.
+    // Even after makeFun() finishes, the returned displayName function remembers `name`.
     function makeFun(){
         const name = "ruthvik"
-        function diaplayName(){
+        function displayName(){
             console.log(name);
         }
         return displayName;
     }
+    // makeFun() finishes, but displayName() is returned and assigned to myFunc.
+    // Because of the closure, myFunc still has access to `name` from makeFun().
     const myFunc = makeFunc();
+    // Calling myFunc() runs displayName(), which can still access `name`.
     myFunc();
 </script>
 <script>
@@ -27,6 +35,12 @@
     // document.getElementById("green").onclick= function(){
     //     document.getElementById("green").style.backgroundColor= 'green'
     // }
+
+    // This is another example of a closure.
+    // clickHandler() receives `color` and returns an inner function.
+    // The inner function remembers the `color` value from clickHandler(),
+    // even after clickHandler() has finished executing.
+
     function clickHandler(color){
         // document.body.style.background=`${color}`
         return function(){
@@ -34,7 +48,11 @@
 
         }
     }
+    // clickHandler("orange") creates a closure that remembers: color = "orange".
+    // That returned function is assigned as the orange button's click handler.
     document.getElementById("orange").onclick=clickHandler("orange")
+    // clickHandler("green") creates a separate closure that remembers: color = "green".
+    // Each button therefore gets its own function with its own remembered `color`.
     document.getElementById("green").onclick=clickHandler("green")
 
 </script>
