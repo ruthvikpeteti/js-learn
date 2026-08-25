@@ -1,4 +1,4 @@
-// Immediately Invoked function expresiion
+// Immediately Invoked function expression
 
 (function chai(){//named iife
     console.log(`DB connected`)
