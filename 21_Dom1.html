@@ -46,9 +46,9 @@
     console.log(title.innerHTML)// shows everything including the html inside the title
 
     //NodeList
-    // in query selector you can give any attribute, tag etc and it will return the first element it woill find whith that selector
-    console.log(document.querySelector('h4'))//it returns the first element if mutiple with the same selectors are present
-    console.log(document.querySelector('#title'))// it is usefll as it directly uses css selectors
+    // in query selector you can give any attribute, tag etc and it will return the first element it will find with that selector
+    console.log(document.querySelector('h4'))//it returns the first element if multiple with the same selectors are present
+    console.log(document.querySelector('#title'))// it is useful as it directly uses css selectors
     console.log(document.querySelector('.main-heading'))
     console.log(document.querySelectorAll('h4'))//this returns a node list which is similar toa array but not an array, for eg map is not available
     const myh4=document.querySelectorAll('h4')
@@ -60,7 +60,7 @@
     console.log(document.getElementsByClassName('list-item'))// always returns a HTMLCollection
     const myul = document.getElementsByClassName('list-item')
     console.log(myul)
-    const arrmyul = Array.from(myul)//To itearate on a HTMLCollection you need to change it into an array
+    const arrmyul = Array.from(myul)//To iterate on a HTMLCollection you need to change it into an array
     console.log(arrmyul)//now an array, now methods like for-each, mao could be applied
     arrmyul.forEach((li)=>{li.style.color="orange"})
 
