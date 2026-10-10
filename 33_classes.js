@@ -7,7 +7,7 @@
 
 //     encryptPassword(){
 //         return `${this.password} abc`
-//     }
+//     }    
 // }
 
 // const chai = new User("ruthvik","ruthvik@gmail.com","123")
@@ -15,7 +15,7 @@
 
 // behind the scene
 
-function User(username,email,password){
+function User(username,email,password){// this is object constructor, this is really just a function
     this.username = username;
     this.email=email;
     this.password=password

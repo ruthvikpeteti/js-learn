@@ -23,10 +23,10 @@
     //     alert('This is an owl');
     // }       
 
-    document.getElementById('owl').addEventListener('click', function(e){// this the best approach to find an occurance event
+    document.getElementById('owl').addEventListener('click', function(e){// this the best approach to find an occurrence event
         console.log(e)
         //alert('This is an owl');
-    })// it is used for eg type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget(*learn atlest these)
+    })// it is used for eg type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget(*learn at least these)
     //clientx, clienty,screenx,screeny
     //coordinates, altKey, shiftkey, keycode
     /
@@ -35,12 +35,12 @@
     },false)
     document.getElementById('owl').addEventListener('click', function(e){
         console.log("clicked owl")
-        //e.stopPropagation()// it stops the event form propogating after this.
+        //e.stopPropagation()// it stops the event form propagating after this.
     },false)
     // The third parameter (true/false) controls event propagation.
     // If false (default), the event follows bubbling: inner element runs first, then outer.
     // If true, the event follows capturing: outer element runs first, then inner.
-    //in this perticular example the li tag in which the image exists is inside the ul tag iff the ul tag of if i click an element of il tag then functions ofboth li and ul must occur, the true/false specify in ehich direction the propogation happenes if its fale(default) then inside out happens the li function will run before the ul function is true then opposite happenes
+    //in this particular example the li tag in which the image exists is inside the ul tag iff the ul tag of if i click an element of il tag then functions of both li and ul must occur, the true/false specify in which direction the propagation happens if its false(default) then inside out happens the li function will run before the ul function is true then opposite happens
 
     document.getElementById('google').addEventListener('click',function(e){
         e.preventDefault()//stops the browser’s default behavior for an event

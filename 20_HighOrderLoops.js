@@ -30,7 +30,7 @@ const myobj={
 }
 
 for(const key in myobj){
-    //console.log(myobj[key])
+    console.log(myobj[key])
 }
 // for-each 
 const coding= ['js','ruby','java','cpp']
